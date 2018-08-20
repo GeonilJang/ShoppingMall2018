@@ -1,0 +1,27 @@
+@charset "EUC-KR";
+
+body, td, iuput, select, textarea{
+	font-size:13px; font-family:"verdana";
+}
+
+
+a:link{
+	color:#black; test-decoration:none; font-size:13px; font-family:"verdana";
+}
+
+a:visited{
+	color:blude; text-deciration:none; font-size:13px; font-family:"verdana";
+}
+
+a:hover{
+	color:red; text-decoration:underline; font-size:13px; font-family:"verdana";
+	font-weight:bold;
+}
+
+li{
+	line-style:none;
+}
+
+th{
+	background="red";
+}
