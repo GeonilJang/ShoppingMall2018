@@ -23,28 +23,28 @@
 </script>
 
 <!-- 카테고리 등록 -->
-<hr width=400 color="maroon">
-<h2 align=center>카테고리 등록</h2>
-<hr width=400 color="maroon">
-
-<form action="cat_regOK.jsp" method="post" name="cat_inputFrm">
-	<table class="table table-hover table-border">
-		<tr>
-			<th>코드</th>
-			<td><input type="text" name="code" maxlength=10></td>
-		</tr>
-		<tr>
-			<th>카테고리 이름</th>
-			<td><input type="text" name="cname" maxlength=10></td>
-		</tr> 
-		<tr>
-			<th colspan=2>
-				<input type="reset" value="취소" class="btn btn-danger pull-right">
-				<input type="button" value="등록" class="btn btn-success pull-right" onclick="inputCheck()">
-			</th>
-		</tr>
-	</table>
-</form>
-
+<div class="panel panel-success">
+  <div class="panel-heading"><h3 align=center>카테고리 등록</h3></div>
+  <div class="panel-body" id="">
+	  <form action="cat_regOK.jsp" method="post" name="cat_inputFrm">
+			<table class="table table-hover table-border">
+				<tr>
+					<th>코드</th>
+					<td><input type="text" name="code" maxlength=10></td>
+				</tr>
+				<tr>
+					<th>카테고리 이름</th>
+					<td><input type="text" name="cname" maxlength=10></td>
+				</tr> 
+				<tr>
+					<th colspan=2>
+						<input type="reset" value="취소" class="btn btn-danger pull-right">
+						<input type="button" value="등록" class="btn btn-success pull-right" onclick="inputCheck()">
+					</th>
+				</tr>
+			</table>
+		</form>
+  </div>
+</div>
 
 <%@ include file="../ad_bottom.jsp" %>

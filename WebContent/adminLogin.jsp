@@ -22,22 +22,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<hr>
-			<h2 align="center">관리자 로그인</h2>
-			<hr>
-			<form action="loginOk.jsp" method="post">
-				<ul style="list-style:none;" align="center">
-					<li>아이디 : <input type="text" name="id" value="<%if(session.getAttribute("id") !=null) out.println(session.getAttribute("id")); %>" ></li>
-					<li>비밀번호 : <input type="text" name="pw"></li> 
-					<li><input type="submit" value="로그인" class="btn btn-primary" style="margin-top:30px;"></li>
-				</ul>
-				
-			</form>
-		</div>
-	</div>
-</div>
+	<div class="container">
+	 <form class="form-signin" action="loginOk.jsp" method="post">
+	   <h2 class="form-signin-heading">관리자 페이지 로그인</h2>
+	   <label for="inputEmail" class="sr-only">아이디</label>
+	   <input type="text" name="id" class="form-control" placeholder="관리자 아이디" value="<%if(session.getAttribute("id") !=null) out.println(session.getAttribute("id")); %>"  required autofocus>
+	    <label for="inputPassword" class="sr-only">비밀번호</label>
+	    <input type="password" id="inputPassword" class="form-control" placeholder="관리자 비밀번호" name="pw" required>
+	    <div class="checkbox">
+	      <label>
+	        <input type="checkbox" value="remember-me"> 아이디 저장하기
+	      </label>
+	    </div>
+	    <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+	  </form>
+	</div> 
 </body>
 </html>
