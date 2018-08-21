@@ -32,7 +32,7 @@
 		        <div id="navbar" class="collapse navbar-collapse">
 		          <ul class="nav navbar-nav">
 		            <li class="active"><a href="<%=request.getContextPath()%>/ad_main.jsp">관리자 홈</a></li>
-		            <li><a href="<%=request.getContextPath()%>/ad_main.jsp">쇼핑몰 홈</a></li>
+		            <li><a href="<%=request.getContextPath()%>/userPage/main.jsp">쇼핑몰 홈</a></li>
 		            <li><a href="<%=request.getContextPath()%>/admin/cat_input.jsp">카테고리 등록</a></li>
 		            <li><a href="<%=request.getContextPath()%>/admin/catList.jsp">카테고리 리스트</a></li>
 		            <li><a href="<%=request.getContextPath()%>/admin/prod_input.jsp">상품 등록</a></li>
