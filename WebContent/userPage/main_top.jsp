@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-
+    pageEncoding="EUC-KR" import="shoppingMall.*,java.util.*,java.net.*"%>
+<%
+request.setCharacterEncoding("euc-kr");
+%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,14 +32,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">쇼핑몰 홈</a>
+          <a class="navbar-brand" href="<%=request.getContextPath()%>/userPage/main.jsp">쇼핑몰 홈</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a href="<%=request.getContextPath()%>/adminLogin.jsp">관리자</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -52,21 +54,42 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
+          <%
+          	CategoryDAO cdao = CategoryDAO.getInstance();
+          	ArrayList<CategoryDTO> cdtos =cdao.categoryAll();
+          	
+          	if(cdtos != null && cdtos.size() !=0){
+          		for(CategoryDTO cdto:cdtos){
+          			
+          			String cname = cdto.getCname();
+          			String code = cdto.getCode();
+           			
+					//code=URLEncoder.encode(cname, "UTF-8");
+          			cname=URLEncoder.encode(cname, "UTF-8");
+          			/* URL url = new URL("http://www.test.com/login.jsp?id="+id+"&pass="+pass); */
+
+
+ 		  %>
+				<li><a href="catList.jsp?category_fk=<%=code%>&cname=<%=cname%>"><%=cdto.getCname() %></a></li>
+          			
+		 <%
+          		}//for
+          	}//if
+          	else{
+          		out.println("<li>카테고리 내용이 없음!!</li>");
+          	}
+          %>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
+            <li><a href="#">네비2</a></li>
+            <li><a href="#">네비2</a></li>
+            <li><a href="#">네비2</a></li>
+            <li><a href="#">네비2</a></li>
+            <li><a href="#">네비2</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
+            <li><a href="#">네비1</a></li>
+            <li><a href="#">네비1</a></li>
+            <li><a href="#">네비1</a></li>
           </ul>
         </div>
